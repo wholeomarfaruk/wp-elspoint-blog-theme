@@ -1,0 +1,1 @@
+# wp-elspoint-blog-theme
