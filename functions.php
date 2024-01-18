@@ -12,3 +12,5 @@ include_once('inc/enqueue.php');
 include_once('inc/theme_function.php');
 //Regisger Menu
 include_once('inc/menu_register.php');
+//Regisger Widgets
+include_once('inc/widgets_register.php');

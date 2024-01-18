@@ -74,7 +74,7 @@ echo get_header();  ?>
             </div>
 
             <div class="col-md-3">
-                <h5>Side bar</h5>
+                <?php get_sidebar(); ?>
             </div>
         </div>
     </div>
