@@ -15,6 +15,14 @@
 
 
                     <?php the_content();?>
+                    <div id="page_nav">
+                        <?php if ('elspoint_page_navigate') {
+                            elspoint_page_navigate();
+                        } else { ?>
+                            <?php next_post_link(); ?>
+                            <?php previous_post_link(); ?>
+                        <?php }; ?>
+                    </div>
             </div>
             <div class="col-md-3">
                 <h5>Side bar</h5>
