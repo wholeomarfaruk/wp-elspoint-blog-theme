@@ -8,11 +8,11 @@ echo get_header();  ?>
 ?>
 
 <!-- Body Area  -->
-<section id="body_area">
+<section id="body_area" class="page_page">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-            <?php get_template_part('template_part/blog_setup'); ?>
+            <?php get_template_part('template_part/post_setup'); ?>
 
             </div>
 

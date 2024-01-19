@@ -2,30 +2,28 @@
 /*=======================================
 * Main Template theme Header file include
 ========================================= */
- echo get_header();  ?>
+echo get_header();  ?>
 
-<?php //echo the_content(); ?>
+<?php //echo the_content(); 
+?>
 
 <!-- Body Area  -->
-<section id="body_area">
+<section id="body_area" class="page_page">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                
-
-
-                    <?php the_content();?>
-                    <div id="page_nav">
-                        <?php if ('elspoint_page_navigate') {
-                            elspoint_page_navigate();
-                        } else { ?>
-                            <?php next_post_link(); ?>
-                            <?php previous_post_link(); ?>
-                        <?php }; ?>
-                    </div>
+            <?php get_template_part('template_part/post_setup'); ?>
+            <div id="comments_area">
+                <?php comments_template();?>
             </div>
+
+            </div>
+
             <div class="col-md-3">
-               <?php get_sidebar(); ?>
+                <div id="sidebar_area">
+                    <?php get_sidebar(); ?>
+                </div>
+               
             </div>
         </div>
     </div>
@@ -34,7 +32,7 @@
 
 
 
-<?php 
+<?php
 /*=======================================
 * Main Template theme Footer file include
 ========================================= */
