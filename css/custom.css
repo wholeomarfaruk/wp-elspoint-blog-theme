@@ -233,6 +233,92 @@ text-transform: uppercase;
     box-shadow: none;
 }
 /*===========================================
+ Sidebar AREA CSS 
+============================================= */
+#sidebar_area {
+    padding: 0px 5px;
+}
+.child-sidebar{
+    
+    margin-bottom: 10px;
+}
+.child-sidebar h2 {
+    font-size: 1.5em;
+    border-left: 5px solid #a90cf9;
+    padding-left: 4px;
+}
+.child-sidebar input[type=search] {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.child-sidebar input[type=search]:focus-visible {
+    outline: none;
+    border: 1px solid #a90cf9;
+}
+.child-sidebar button[type=submit] {
+    background-color: #a90cf9;
+    color: #fff;
+    padding: 3px 10px;
+    margin-left: 0px;
+    transition: 0.3s;
+}
+.child-sidebar button[type=submit]:hover {
+    background-color: #262626;
+    
+}
+.child-sidebar ul{
+    display: block;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    list-style: none;
+}
+.child-sidebar ul ul{
+    display: none;
+    
+}
+.child-sidebar ul li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+}
+.child-sidebar ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    margin: 5px 0;
+}
+.child-sidebar ul li a:hover{
+    color: #a90cf9;  
+}
+.child-sidebar .tag-cloud-link {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 5px 5px;
+    margin: 2px 1px;
+    font-size: 0.8em !important;
+    display: inline-block;
+    transition: 0.3s;
+}
+.child-sidebar .tag-cloud-link:hover {
+    
+    background-color: #a90cf9;
+    
+    
+}
+.child-sidebar ul li.wp-social-link {
+    display: inline-block;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+.child-sidebar ul li.wp-social-link a {
+    margin: 0;
+    padding: 10px;
+}
+/*===========================================
  FOOTER AREA CSS 
 ============================================= */
 #copyright_section .container-fluid .row .col-md-12{

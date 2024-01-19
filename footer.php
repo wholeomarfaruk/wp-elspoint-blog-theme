@@ -1,16 +1,39 @@
+<?php
+
+/**==============================
+ * This a Footer area part
+ ================================*/
+
+?>
+
 <footer id="footer_area">
-<section id="copyright_section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <p><?php echo get_theme_mod( 'elspoint_copyright_text' ); ?></p>
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <?php dynamic_sidebar('footer-1'); ?>
+                </div>
+                <div class="col-md-4">
+                    <?php dynamic_sidebar('footer-2'); ?>
+                </div>
+                <div class="col-md-4">
+                    <?php dynamic_sidebar('footer-3'); ?>
+                </div>
             </div>
-            
         </div>
-    </div>
-</section>
+    </section>
+    <section id="copyright_section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><?php echo get_theme_mod('elspoint_copyright_text'); ?></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </footer>
-    <?php wp_footer(); ?>
+<?php wp_footer(); ?>
 </body>
 
 </html>
