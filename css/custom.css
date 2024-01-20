@@ -1,30 +1,40 @@
 /*========================================
 * COMMON CSS
 ==========================================*/
+:root{
+    --link_bgc_color:#a90cf9;
+    --hover_bgc_color:#262626;
+    --body_bgc_color:#ffffff;
+    --text_color:#000000;
+    --tag_bgc_color:#000000;
+    --hover_tag_bgc_color:#a90cf9;
+}
 body {
     font-family: 'arial','sens-serif';
     font-size: 15px;
     line-height: 20px;
     box-sizing: border-box;
+    background-color: var(--body_bgc_color);
 }
 img{
     height: 100%;
     width: 100%;
 
 }
-.read_more, input[type=submit] {
+.read_more, .comments_area input[type=submit] {
     border: none;
     box-shadow: 3px 2px 3px gray;
-    background-color: #a90cf9;
+    background-color: var(--link_bgc_color);
     color: #fff;
     padding: 3px 10px;
     margin-left: 5px;
     text-decoration: none;
+    transition: 0.3s;
 
 }
 .read_more:hover {
     box-shadow: 3px 2px 3px gray;
-    background-color: #310f42;
+    background-color: var(--hover_bgc_color);
     color: #fff;
     padding: 3px 10px;
     margin-left: 5px;
@@ -37,7 +47,7 @@ input[type=search], textarea {
 }
 input[type=search]:focus-visible, textarea:focus-visible {
     outline: none;
-    border: 1px solid #a90cf9;
+    border: 1px solid var(--link_bgc_color);
 }
 /*========================================
 * HEADER AREA CSS
@@ -148,16 +158,16 @@ text-transform: uppercase;
 /*==========================================
 * Archive title Area
 ============================================*/
-#archive_title {
+#archive_title,#search_title {
     display: block;
     width: 100%;
     background: lightblue;
     padding: 5px 10px;
     border-radius: 5px;
 }
-#archive_title .title {
-    font-size: 1.5em;
-    border-left: 5px solid #a90cf9;
+#archive_title .title, #search_title .title{
+    font-size: 1.3em;
+    border-left: 5px solid var(--link_bgc_color);
     padding-left: 4px;
     margin: 0;
 }
@@ -237,7 +247,7 @@ text-transform: uppercase;
 #blog_post .post_h_text_1 ul li a {
     text-decoration: none;
     color: #fff;
-    background-color: #000;
+    background-color: var(--tag_bgc_color);
     padding: 5px 10px;
     margin: 2px 1px;
     font-size: 0.7em !important;
@@ -247,13 +257,18 @@ text-transform: uppercase;
 }
 #blog_post .post_h_text_1 ul li a:hover {
     
-    background-color: #a90cf9;
+    background-color: var(--hover_tag_bgc_color);
     
     
 }
 #blog_post > #post_details > #full_details  > a{
     text-decoration: none;
     color: #000;
+    
+    
+}
+#blog_post > #post_details > #full_details  > a:hover{
+   color: var(--hover_tag_bgc_color);
     
     
 }
@@ -314,27 +329,29 @@ Paginatation CSS
 }
 .child-sidebar h2 {
     font-size: 1.5em;
-    border-left: 5px solid #a90cf9;
+    border-left: 5px solid var(--link_bgc_color);
     padding-left: 4px;
 }
-.child-sidebar input[type=search] {
+.child-sidebar input[type=search], #error_content input[type=text] {
     background: #fff;
     border: 1px solid #ddd;
     padding: 10px;
 }
-.child-sidebar input[type=search]:focus-visible {
+.child-sidebar input[type=search]:focus-visible, #error_content input[type=text]:focus-visible {
     outline: none;
-    border: 1px solid #a90cf9;
+    border: 1px solid var(--link_bgc_color);
 }
-.child-sidebar button[type=submit] {
-    background-color: #a90cf9;
+.child-sidebar button[type=submit], #error_content input[type=submit] {
+    border: none;
+    background-color: var(--link_bgc_color);
     color: #fff;
-    padding: 3px 10px;
+    padding: 11px 10px;
     margin-left: 0px;
+    display: inline-block;
     transition: 0.3s;
 }
-.child-sidebar button[type=submit]:hover {
-    background-color: #262626;
+.child-sidebar button[type=submit]:hover, #error_content input[type=submit]:hover {
+    background-color: var(--hover_bgc_color);
     
 }
 .child-sidebar ul{
@@ -361,12 +378,12 @@ Paginatation CSS
     margin: 5px 0;
 }
 .child-sidebar ul li a:hover{
-    color: #a90cf9;  
+    color: var(--hover_tag_bgc_color);  
 }
 .child-sidebar .tag-cloud-link {
     text-decoration: none;
     color: #fff;
-    background-color: #000;
+    background-color: var(--tag_bgc_color);
     padding: 5px 5px;
     margin: 2px 1px;
     font-size: 0.8em !important;
@@ -375,7 +392,7 @@ Paginatation CSS
 }
 .child-sidebar .tag-cloud-link:hover {
     
-    background-color: #a90cf9;
+    background-color: var(--hover_tag_bgc_color);
     
     
 }
@@ -409,7 +426,7 @@ footer#footer_area {
 ============================================*/
 #comments_area h2{
     font-size: 1.5em;
-    border-left: 5px solid #a90cf9;
+    border-left: 5px solid var(--link_bgc_color);
     padding-left: 4px;
 }
 #comments_area label{
@@ -428,4 +445,26 @@ footer#footer_area {
     transform: none;
     box-shadow: none;
 }
-   
+/*==========================================
+* 404 error page  custom style
+============================================*/
+#error_content{
+    padding: 50px;
+    text-align: center;
+
+}
+#error_content p{
+    font-size: 1.2em;
+    color: var(--link_bgc_color);
+}
+#error_content .home_page_btn{
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    background-color: var(--link_bgc_color);
+    color: #fff;
+    text-decoration: none;
+}
+#error_content .home_page_btn:hover{
+    background-color: var(--hover_bgc_color);
+}

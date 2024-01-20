@@ -85,9 +85,10 @@ function elspoint_customization($wp_customize){
 
         // default Settings - img, 
         $wp_customize->add_section('default_settings',array(
-            'title'=>__('All Default Settings','elspointremotework'),
+            'title'=>__('Default Theme Settings','elspointremotework'),
             'description'=> 'You can change all default settings or update from here.',
         ));
+        //default not found image
         $wp_customize->add_setting('default_no_img',array(
             'default'=> get_bloginfo('template_directory').'/img/image-not-found.png',
         ));
@@ -97,6 +98,80 @@ function elspoint_customization($wp_customize){
             'section'=> 'default_settings',
             'settings'=> 'default_no_img',
         )));
+        
+        // link, button backgound color
+        $wp_customize->add_setting('link_bgc_color',array(
+            'default'=>'#a90cf9',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'link_bgc_color',array(
+            'label'=> __('Theme Color', 'elspointremotework'),
+            'description'=>'You can change default Link or buttons Background Color from here.',
+            'section'=> 'default_settings',
+            'settings'=> 'link_bgc_color',
+        )));
+
+        // link hover backgound color
+        $wp_customize->add_setting('hover_bgc_color',array(
+            'default'=>'#262626',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'hover_bgc_color',array(
+            'label'=> __('button hover background Color', 'elspointremotework'),
+            'description'=>'You can change default Link or buttons hover Background Color from here.',
+            'section'=> 'default_settings',
+            'settings'=> 'hover_bgc_color',
+        )));
+
+        // Body backgound color
+        $wp_customize->add_setting('body_bgc_color',array(
+            'default'=>'#ffffff',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'body_bgc_color',array(
+            'label'=> __('Body background Color', 'elspointremotework'),
+            'description'=>'You can change default Link or buttons hover Background Color from here.',
+            'section'=> 'default_settings',
+            'settings'=> 'body_bgc_color',
+        )));
+
+        // tags type links  backgound color
+        $wp_customize->add_setting('tag_bgc_color',array(
+            'default'=>'#000000',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'tag_bgc_color',array(
+            'label'=> __('Tag background Color', 'elspointremotework'),
+            'description'=>'You can change default tag Link types or button like tag Background Color from here.',
+            'section'=> 'default_settings',
+            'settings'=> 'tag_bgc_color',
+        )));
+
+        // tags type links hover  backgound color
+        $wp_customize->add_setting('hover_tag_bgc_color',array(
+            'default'=>'#a90cf9',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'hover_tag_bgc_color',array(
+            'label'=> __('Tag hover background Color', 'elspointremotework'),
+            'description'=>'You can change default tag Link types hover or button like tag hover Background Color from here.',
+            'section'=> 'default_settings',
+            'settings'=> 'hover_tag_bgc_color',
+        )));
+
 };
 
 add_action('customize_register','elspoint_customization');
+
+
+//Theme Color function
+function theme_color_customize(){
+    ?>
+    <style>
+        :root{
+    --link_bgc_color:<?php echo get_theme_mod('link_bgc_color'); ?>;
+    --hover_bgc_color:<?php echo get_theme_mod('hover_bgc_color'); ?>;
+    --body_bgc_color:<?php echo get_theme_mod('body_bgc_color'); ?>;
+    --text_color:#000000;
+    --tag_bgc_color:<?php echo get_theme_mod('tag_bgc_color'); ?>;
+    --hover_tag_bgc_color:<?php echo get_theme_mod('hover_tag_bgc_color'); ?>;
+}
+    </style>
+    <?php
+}
+add_action('wp_head','theme_color_customize');

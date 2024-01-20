@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-3">
                     
-                    <a href="#">
+                    <a href="<?php echo get_home_url(); ?>">
                         <div id="logo"> <img src="<?php echo get_theme_mod('elspoint_logo'); ?>" alt="Logo"></div>
                        
                     </a>
