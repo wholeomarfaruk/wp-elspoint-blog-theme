@@ -37,7 +37,26 @@
                 </div>
                 <div id="post_details">
                     <div id="short_details">
-                        <span class="post_h_text_1"><?php echo the_category(); ?></span>
+                        <span class="post_h_text_1">
+                            <ul>
+                            <?php $category = get_the_category(); 
+
+                            $cat_count=count($category);
+                            $max=2;
+                            
+                            for ($i=0; $i < $retVal = ($cat_count>2) ? $max : $cat_count ; $i++) { 
+                                
+                                 $get_cat_id = $category[$i]->term_taxonomy_id;
+                                $category_link = get_category_link($get_cat_id);
+                                 $category_name = $category[$i]->name; 
+                                 echo '<li><a href="'.$category_link.'">'.$category_name.'</a></li>' ;
+                            }
+                            
+                          ?>  
+                          </ul>                                 
+                          
+                    
+                    </span>
                         <span class="post_h_text_2">5min read</span>
                     </div>
                     <div id="full_details">

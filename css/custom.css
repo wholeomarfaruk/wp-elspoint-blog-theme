@@ -12,13 +12,15 @@ img{
     width: 100%;
 
 }
-.read_more {
+.read_more, input[type=submit] {
+    border: none;
     box-shadow: 3px 2px 3px gray;
     background-color: #a90cf9;
     color: #fff;
     padding: 3px 10px;
     margin-left: 5px;
     text-decoration: none;
+
 }
 .read_more:hover {
     box-shadow: 3px 2px 3px gray;
@@ -27,6 +29,15 @@ img{
     padding: 3px 10px;
     margin-left: 5px;
     text-decoration: none;
+}
+input[type=search], textarea {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+input[type=search]:focus-visible, textarea:focus-visible {
+    outline: none;
+    border: 1px solid #a90cf9;
 }
 /*========================================
 * HEADER AREA CSS
@@ -135,6 +146,33 @@ text-transform: uppercase;
 
 
 /*==========================================
+* Archive title Area
+============================================*/
+#archive_title {
+    display: block;
+    width: 100%;
+    background: lightblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#archive_title .title {
+    font-size: 1.5em;
+    border-left: 5px solid #a90cf9;
+    padding-left: 4px;
+    margin: 0;
+}
+#archive_title .description {
+    margin-top: 5px;
+    padding-left: 10px;
+    color: gray;
+  
+}
+#archive_title .description p {
+    margin: 0;
+    
+  
+}
+/*==========================================
 * Blog Area
 ============================================*/
 #blog_area {
@@ -228,18 +266,21 @@ text-transform: uppercase;
 }
 
 /*===========================================
- Page Nagigate CSS 
+Paginatation CSS 
 ============================================= */
 #page_nav {
     display: block;
     width: 100%;
     grid-column: 1/-1;
-    background: lightblue;
-    padding: 20px 15px;
-    border-radius: 5px;
 }
 #page_nav .wp_pagenav {
     text-align: center;
+    display: block;
+    width: 100%;
+   
+    background: lightblue;
+    padding: 20px 15px;
+    border-radius: 5px;
 }
 #page_nav .page-numbers {
     background: azure;
@@ -362,6 +403,17 @@ footer#footer_area {
     text-align: center;
     color: #fff;
     margin: 0;
+}
+/*==========================================
+* Comments area style
+============================================*/
+#comments_area h2{
+    font-size: 1.5em;
+    border-left: 5px solid #a90cf9;
+    padding-left: 4px;
+}
+#comments_area label{
+    display: block;
 }
 /*==========================================
 * Page page  custom style
